@@ -1,5 +1,6 @@
 var HttpStatus = require('http-status');
-const logger = require('@capillarytech/arya').Logger.getLogger('aira');
+const logger = require('../utils/logger')
+
 var BaseController = function BaseController() {
 	logger.info('base created');
 };

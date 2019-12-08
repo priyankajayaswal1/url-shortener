@@ -1,18 +1,9 @@
-const logger = require('@capillarytech/arya').Logger.getLogger('aira');
-const BB = require('bluebird');
-const MongoAppInfoRepo = require('../repos').getMongoAppInfoRepo();
-const MongoOrganizationRepo = require('../repos').getMongoOrganizationRepo();
+const UrlService = function UrlService() { };
+const logger = require('../utils/logger')
 
-const AppInfoService = function AppInfoService() { };
-
-AppInfoService.prototype.requestImage = function requestImage(options) {
-	logger.info('Inside AppInfoService', options);
-	return MongoAppInfoRepo.findAppInfo(options);
+UrlService.prototype.requestPage = function requestPage(orgId, options) {
+	logger.info('Inside UrlService for org', orgId, options);
+	return "ok"//MongoOrganizationRepo.findOrgSpecificInfo(orgId, options);
 };
 
-AppInfoService.prototype.requestPage = function requestPage(orgId, options) {
-	logger.info('Inside AppInfoService for org', orgId, options);
-	return MongoOrganizationRepo.findOrgSpecificInfo(orgId, options);
-};
-
-module.exports = AppInfoService;
+module.exports = UrlService;

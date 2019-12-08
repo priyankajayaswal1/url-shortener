@@ -1,20 +1,23 @@
-var BaseController = require('./base.controller');
 var util = require('util');
-const logger = require('@capillarytech/arya').Logger.getLogger('aira');
-const AppInfoService = require('../services').getAppInfoService();
+var BaseController = require('./base.controller');
+const logger = require('../utils/logger')
 
-var AppInfoController = function AppInfoController() {
-	logger.info('AppInfo Controller Initialized');
+const UrlService = require('../services').getUrlService();
+
+var UrlController = function UrlController() {
+	logger.info('Url Controller Initialized');
 };
 
-util.inherits(AppInfoController, BaseController);
+util.inherits(UrlController, BaseController);
 
-AppInfoController.prototype.getInfo = function getInfo(req, res) {
-	logger.info('Inside AppInfoController getInfo:', req.params);
-	AppInfoService.requestPage(req.orgId, req.params.pageName)
+UrlController.prototype.getInfo = function getInfo(req, res) {
+	logger.info('Inside UrlController getInfo:', req.params);
+	UrlService.requestPage(req.orgId, req.params.pageName)
 		.then((data) => {
-			res.json(this.getSuccessResponse('AppInfo', data[req.params.pageName]));
+			res.json(this.getSuccessResponse('Url', data[req.params.pageName]));
 		}).catch((err) => {
 			res.json(this.getErrorResponse(err))
 		});
 };
+
+module.exports = UrlController
