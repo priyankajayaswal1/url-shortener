@@ -5,20 +5,16 @@ var BaseController = function BaseController() {
 	logger.info('base created');
 };
 
-BaseController.prototype.getSuccessResponse = function getSuccessResponse(type, message) {
-	return { status: { isError: false, code: HttpStatus.OK, message: 'success' }, body: message };
+BaseController.prototype.getSuccessResponse = function getSuccessResponse(res, body) {
+	return res.json({"body":body});
 };
 
-BaseController.prototype.getCreatedResponse = function getCreatedResponse(message, res) {
-	return { status: { isError: false, code: HttpStatus.CREATED, message: message }, body: res };
+BaseController.prototype.getErrorResponse = function getErrorResponse(res, error) {
+	return res.json({"body":error});
 };
 
-BaseController.prototype.getErrorResponse = function getErrorResponse(error) {
-	return { status: { isError: true, code: HttpStatus.INTERNAL_SERVER_ERROR, message: error } };
-};
-
-BaseController.prototype.getBadRequestResponse = function getBadRequestResponse(error) {
-	return { status: { isError: true, code: HttpStatus.BAD_REQUEST, message: error } };
+BaseController.prototype.getRedirectResponse = function getRedirectResponse(res, longUrl) {
+	return res.redirect( longUrl)
 };
 
 module.exports = BaseController;

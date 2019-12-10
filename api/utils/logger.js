@@ -1,9 +1,11 @@
 
 const winston = require('winston');
+var appRoot = require('app-root-path');
+
 var options = {
     file: {
       level: 'info',
-      filename: `../logs/app.log`,
+      filename: `${appRoot}/logs/app.log`,
       handleExceptions: true,
       json: true,
       maxsize: 5242880, // 5MB
@@ -27,9 +29,18 @@ var options = {
   });
 
   logger.stream = {
-    write: function(message, encoding) {
+    write: function(message) {
       logger.info(message);
     },
   };
+
+  // const logger = {
+//   info: function(message) {
+//     console.log(message)
+//   },
+//   warn: function(message) {
+//     console.log(message)
+//   }
+// }
 
 module.exports = logger;

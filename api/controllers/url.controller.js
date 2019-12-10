@@ -10,13 +10,29 @@ var UrlController = function UrlController() {
 
 util.inherits(UrlController, BaseController);
 
-UrlController.prototype.getInfo = function getInfo(req, res) {
-	logger.info('Inside UrlController getInfo:', req.params);
-	UrlService.requestPage(req.orgId, req.params.pageName)
+UrlController.prototype.getLongUrl = function getLongUrl(req, res) {
+	logger.info('Inside UrlController getLongUrl' + req.params.id);
+	UrlService.fetchLongUrl(req.params.id)
 		.then((data) => {
-			res.json(this.getSuccessResponse('Url', data[req.params.pageName]));
+			if (data != null && data["long_url"] != null ){
+				this.getRedirectResponse(res, data["long_url"]);
+			}
+			else
+			{
+				this.getErrorResponse(res, "Invalid code")
+			}
 		}).catch((err) => {
-			res.json(this.getErrorResponse(err))
+			this.getErrorResponse(res, err)
+		});
+};
+
+UrlController.prototype.createShortUrl = function createShortUrl(req, res) {
+	logger.info('Inside UrlController ');
+	UrlService.createShortUrl(req.body)
+		.then((data) => {
+			this.getSuccessResponse(res, data);
+		}).catch((err) => {
+			this.getErrorResponse(res, err)
 		});
 };
 
