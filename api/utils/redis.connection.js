@@ -1,4 +1,6 @@
+// Meant to be used for caching for read requests if needed.
 
+/*
 const redis = require('redis');
 const client = redis.createClient();
 const logger = require('./logger')
@@ -14,3 +16,5 @@ client.on('connect', () => {
   });
 
   module.exports = client;
+
+*/

@@ -27,7 +27,7 @@ UrlController.prototype.getLongUrl = function getLongUrl(req, res) {
 };
 
 UrlController.prototype.createShortUrl = function createShortUrl(req, res) {
-	logger.info('Inside UrlController ');
+	logger.info('Inside UrlController ')//+JSON.stringify(req.body));
 	UrlService.createShortUrl(req.body)
 		.then((data) => {
 			this.getSuccessResponse(res, data);

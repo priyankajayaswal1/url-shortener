@@ -32,7 +32,4 @@ router.get('/health-check', (req, res) => res.send('OK'));
 // mount url-routes routes at /url
 router.use('/url',  urlRoutes);
 
-logger.warn('Whats great for a snack,');
-logger.info('And fits on your back?');
-
 module.exports = router;
