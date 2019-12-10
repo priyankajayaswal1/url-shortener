@@ -19,6 +19,6 @@ router.post('/login',(req, res) => function(req,res){
     var password=req.body.password;
     console.log("User name = "+user_name+", password is "+password);
     res.end("yes");
-  });
+});
 
 module.exports = router;

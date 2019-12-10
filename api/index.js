@@ -4,7 +4,6 @@ const Promise = require('bluebird');
 const mongoose = Promise.promisifyAll(require('mongoose'));
 mongoose.Promise = Promise;
 
-const config = require('./config');
 const redisClient = require('./utils/redis.connection');
 const logger = require('./utils/logger');
 const urlRoutes = require('./routes/url.routes');
