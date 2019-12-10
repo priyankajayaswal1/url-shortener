@@ -10,6 +10,10 @@ var urlDataSchema = new Schema({
         type: String,
         required : true
     },
+    visit_count: {
+        type: Number,
+        default: 0
+    },
     added_on: {
         type: Date,
         default: Date.now()

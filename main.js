@@ -1,4 +1,3 @@
-"using strict";
 const express = require('express')
 var morgan = require('morgan');
 var winston = require('winston');
