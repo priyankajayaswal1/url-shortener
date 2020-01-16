@@ -1,10 +1,9 @@
 const express = require('express');
-var HttpStatus = require('http-status');
+
 const Promise = require('bluebird');
 const mongoose = Promise.promisifyAll(require('mongoose'));
 mongoose.Promise = Promise;
 
-const redisClient = require('./utils/redis.connection');
 const logger = require('./utils/logger');
 const urlRoutes = require('./routes/url.routes');
 const router = express.Router(); // eslint-disable-line new-cap
