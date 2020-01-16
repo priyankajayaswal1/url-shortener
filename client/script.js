@@ -22,9 +22,8 @@ function check(event) {
         console.log(data);
         let linkStr = "http://localhost:3000/url/"+data.body
         let labelItem = document.getElementById("result-label");
-        labelItem.innerHTML = linkStr;
+        labelItem.innerHTML = "Shortened version: " + linkStr;
         labelItem.setAttribute("href", linkStr);
-
     }).catch(function(error) {
         document.getElementById("result-label").innerHTML = error.message;
     });

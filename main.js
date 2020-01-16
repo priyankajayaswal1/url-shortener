@@ -4,7 +4,6 @@ var winston = require('winston');
 var bodyParser = require("body-parser");
 
 const app = express()
-const config = require("./config")
 const port = 3000
 const logger = require('./api/utils/logger');
 app.use(morgan('combined', { stream: winston.stream.write }));

@@ -33,14 +33,5 @@ var options = {
       logger.info(message);
     },
   };
-
-  // const logger = {
-//   info: function(message) {
-//     console.log(message)
-//   },
-//   warn: function(message) {
-//     console.log(message)
-//   }
-// }
-
+  
 module.exports = logger;

@@ -1,6 +1,7 @@
 var HttpStatus = require('http-status');
 const logger = require('../utils/logger')
 
+// Base controller to normalise all api responses
 var BaseController = function BaseController() {
 	logger.info('base created');
 };
