@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MiApp</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="root">
+    <!-- Material form register -->
+    <div class="card">
+
+        <h1 class="card-header info-color white-text text-center py-4 ">
+            <strong>Shorten Your Url !!</strong>
+        </h1>
+
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+
+            <!-- Form -->
+            <form class="text-center" id="form-tag" onsubmit="check(event)">
+                <div >
+                    <div >
+                        <label>Long Url</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" id="long-url" style="width: 70%;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Convert!!" >
+                    </div>
+                </div>
+            </form>
+            <a class="text-center"  id="result-label" href="#" target="_blank"></a>
+            <!-- Form -->
+        </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
