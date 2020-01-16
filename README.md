@@ -15,6 +15,8 @@ The website can be accessed here:
 
 4. cd client/ [open the index.html code and access the website locally]
 
+5. npm test [for testing]
+
 ## Tech components
 
 * NodeJs
