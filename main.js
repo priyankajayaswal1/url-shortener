@@ -2,6 +2,7 @@ const express = require('express')
 var morgan = require('morgan');
 var winston = require('winston');
 var bodyParser = require("body-parser");
+var helmet = require('helmet');
 
 const app = express()
 const port = 3000
@@ -10,6 +11,7 @@ app.use(morgan('combined', { stream: winston.stream.write }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(helmet());
 
 app.get('/helloworld', (req, res) => {
   logger.info("hello something")
