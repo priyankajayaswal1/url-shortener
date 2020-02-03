@@ -10,7 +10,7 @@ UrlService.prototype.fetchLongUrl = function fetchLongUrl(hashId) {
 };
 
 UrlService.prototype.createShortUrl = function createShortUrl(data) {
-	const longUrl = data["longUrl"];
+	const longUrl = data["longUrl"].trim();
 	const  startIndex = 0, endIndex = 6;
 	var options = { upsert: true, new: true };
 	return getHashCode(longUrl, startIndex, endIndex)
