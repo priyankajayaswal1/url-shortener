@@ -2,7 +2,7 @@
 
 The repo contains the client and server code for a url-shortener application. The client is built in vanilla Js and works as a website. The backend code is in NodeJS.
 
-The website can be accessed here:
+The website can be accessed here: https://urily.herokuapp.com/
 
 
 ## To run the code locally:

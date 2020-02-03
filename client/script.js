@@ -4,14 +4,14 @@ function check(event) {
 
     var other_params = {
         'method': 'POST',
-        'url': 'localhost:3000/url/',
+        'url': '/url/',
         'headers': {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({"longUrl":document.getElementById('long-url').value}),
     };
 
-    fetch("http://localhost:3000/url/", other_params)
+    fetch("/url/", other_params)
         .then(function(response) {
         if (response.ok) {
             return response.json();
@@ -20,7 +20,7 @@ function check(event) {
         }
     }).then(function(data) {
         console.log(data);
-        let linkStr = "http://localhost:3000/url/"+data.body
+        let linkStr = "/url/"+data.body
         let labelItem = document.getElementById("result-label");
         labelItem.innerHTML = "Shortened version: " + linkStr;
         labelItem.setAttribute("href", linkStr);
