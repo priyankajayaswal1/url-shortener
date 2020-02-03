@@ -1,3 +1,6 @@
 node_modules/*
 logs/*
 miscellaneous.js
+
+Dockerfile
+start_service.sh

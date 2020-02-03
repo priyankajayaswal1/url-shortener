@@ -4,7 +4,8 @@
   "description": "Url shortener API library",
   "main": "main.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./api/test/*"
+    "test": "./node_modules/.bin/mocha ./api/test/*",
+    "start": "nodemon main.js"
   },
   "author": "Priyanka Jayaswal",
   "license": "MIT",
