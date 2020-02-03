@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var helmet = require('helmet');
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const logger = require('./api/utils/logger');
 app.use(morgan('combined', { stream: winston.stream.write }));
 
