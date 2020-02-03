@@ -8,7 +8,7 @@ const logger = require('./utils/logger');
 const urlRoutes = require('./routes/url.routes');
 const router = express.Router(); // eslint-disable-line new-cap
 
-var mongoUrl = 'mongodb://127.0.0.1:27017/heroku_cnrc7k8k';
+var mongoUrl = 'mongodb://heroku_cnrc7k8k:v57hhu39cln0fjij1aflpujlr1@ds215229.mlab.com:15229/heroku_cnrc7k8k';
 var options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
