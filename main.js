@@ -5,13 +5,14 @@ var bodyParser = require("body-parser");
 var helmet = require('helmet');
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 const logger = require('./api/utils/logger');
 app.use(morgan('combined', { stream: winston.stream.write }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet());
+app.use(express.static('client'));
 
 app.get('/helloworld', (req, res) => {
   logger.info("hello something")
