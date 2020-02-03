@@ -11,7 +11,7 @@ var UrlController = function UrlController() {
 util.inherits(UrlController, BaseController);
 
 UrlController.prototype.getLongUrl = function getLongUrl(req, res) {
-	logger.info('Inside UrlController getLongUrl' + req.params.id);
+	logger.info('Inside UrlController getLongUrl   ' + req.params.id);
 	UrlService.fetchLongUrl(req.params.id)
 		.then((data) => {
 			if (data != null && data["long_url"] != null ){
@@ -27,7 +27,7 @@ UrlController.prototype.getLongUrl = function getLongUrl(req, res) {
 };
 
 UrlController.prototype.createShortUrl = function createShortUrl(req, res) {
-	logger.info('Inside UrlController!'+ JSON.stringify(req.headers))
+	logger.info('Inside UrlController!   '+ JSON.stringify(req.headers))
 	UrlService.createShortUrl(req.body)
 		.then((data) => {
 			this.getSuccessResponse(res, data);

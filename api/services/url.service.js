@@ -5,7 +5,7 @@ const UrlData = require('../model/url.model');
 const UrlService = function UrlService() { };
 
 UrlService.prototype.fetchLongUrl = function fetchLongUrl(hashId) {
-	logger.info('Inside UrlService for org' + hashId);
+	logger.info('Inside UrlService for org   ' + hashId);
 	return UrlData.findOneAndUpdate({ 'short_url': hashId }, { $inc: { 'visit_count': 1 } }).exec();
 };
 
