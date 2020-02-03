@@ -26,7 +26,7 @@ UrlService.prototype.createShortUrl = function createShortUrl(data) {
 
 getHashCode = function getHashCode(longUrl, startIndex, endIndex){
 	const hashId = crypto.createHash('md5').update(longUrl).digest('base64').replace(/\//g, '_').replace(/\+/g, '-').substring(startIndex, endIndex);
-	logger.info("hashId"+hashId)
+	logger.info("hashId   "+hashId)
 	return Promise.all([UrlData.find({ 'short_url': hashId })])
 		.then( function(values) {
 			if (values[0].length == 0 || (values[0].length > 0 && values[0][0]["long_url"] == longUrl)) {
